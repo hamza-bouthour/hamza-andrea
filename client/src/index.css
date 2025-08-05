@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Dancing+Script:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --background: hsl(44, 87%, 94%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+
+  /* Wedding Theme Colors */
+  --blush: hsl(327, 73%, 85%);
+  --sage: hsl(104, 16%, 67%);
+  --cream: hsl(44, 87%, 94%);
+  --champagne: hsl(39, 77%, 83%);
+  --rose-gold: hsl(341, 60%, 82%);
+  --deep-sage: hsl(104, 16%, 54%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Wedding Theme Classes */
+  .text-blush {
+    color: hsl(327, 73%, 85%);
+  }
+  
+  .text-sage {
+    color: hsl(104, 16%, 67%);
+  }
+  
+  .text-cream {
+    color: hsl(44, 87%, 94%);
+  }
+  
+  .text-champagne {
+    color: hsl(39, 77%, 83%);
+  }
+  
+  .text-rose-gold {
+    color: hsl(341, 60%, 82%);
+  }
+  
+  .text-deep-sage {
+    color: hsl(104, 16%, 54%);
+  }
+  
+  .bg-blush {
+    background-color: hsl(327, 73%, 85%);
+  }
+  
+  .bg-sage {
+    background-color: hsl(104, 16%, 67%);
+  }
+  
+  .bg-cream {
+    background-color: hsl(44, 87%, 94%);
+  }
+  
+  .bg-champagne {
+    background-color: hsl(39, 77%, 83%);
+  }
+  
+  .bg-rose-gold {
+    background-color: hsl(341, 60%, 82%);
+  }
+  
+  .bg-deep-sage {
+    background-color: hsl(104, 16%, 54%);
+  }
+
+  /* Custom Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  /* Custom Backgrounds */
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(44, 87%, 94%) 0%, hsl(39, 77%, 83%) 50%, hsl(327, 73%, 85%) 100%);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(104, 16%, 54%), hsl(104, 16%, 67%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Image Hover Effects */
+  .image-hover {
+    transition: all 0.3s ease;
+  }
+  
+  .image-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+  
+  /* Floating Hearts */
+  .floating-hearts::before {
+    content: '💕';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    animation: float 2s ease-in-out infinite;
+    font-size: 1.5rem;
+  }
+
+  /* Typography */
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-script {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+}
